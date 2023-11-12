@@ -1,0 +1,179 @@
+
+.main_banner {
+  position: relative;
+  z-index: 1000;
+  width: 100%;
+  height: 100vh;
+}
+
+/* Content should be positioned below the banner */
+.content {
+  position: relative;
+  z-index: 1;
+  margin-top: 100vh;
+}
+
+
+/* Utility classes */
+.hidden { display: none; }
+
+/* Main banner */
+.slide_wrap > li {
+  display: none; /* Hide all slides by default */
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+}
+
+.slide_wrap > li.active {
+  display: block; /* Only show the active slide */
+}
+
+.slide_wrap > li > video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(80%);
+}
+
+/* Scroll icon animation */
+.slide_wrap > li::after {
+  z-index: 12;
+  position: absolute;
+  left: 50%;
+  bottom: 40px;
+  transform: translateX(-16.5px);
+  content: '';
+  display: block;
+  width: 33px;
+  height: 51px;
+  background: url('../img/icon-scroll.png') no-repeat 0 0;
+  animation: scroll_ani 1s ease-out 0s infinite alternate;
+}
+
+@keyframes scroll_ani {
+  0% { bottom: 50px; }
+  100% { bottom: 40px; }
+}
+
+/* Banner text styling */
+.slide_txt {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 80%; /* Responsive width */
+}
+
+.slide_txt h2,
+.slide_txt p {
+  color: #fff;
+}
+
+/* Banner title */
+.main_bnn_title {
+  margin-bottom: 7px;
+  font-size: 4.375vw; /* Responsive font size */
+  font-weight: 700;
+  font-family: 'Noto Sans KR', sans-serif;
+  letter-spacing: -1.4px;
+  line-height: 1.2;
+}
+
+/* Banner paragraph */
+.main_bnn_txt {
+  font-size: 2vw; /* Smaller font size for paragraph */
+  font-weight: bold;
+  text-indent: 4px;
+  letter-spacing: 0.2px;
+  margin-top: 20px; /* Space between title and paragraph */
+}
+
+/* Text animations */
+.slide-in span {
+  display: inline-block;
+  transform: translateY(100%);
+  opacity: 0;
+  animation: slideIn 1s forwards;
+  animation-delay: calc(0.2s * var(--i)); /* Delay based on child index */
+}
+
+/* Custom property for animation delay */
+.slide-in span:nth-child(1) { --i: 1; }
+.slide-in span:nth-child(2) { --i: 2; }
+.slide-in span:nth-child(3) { --i: 3; }
+.slide-in span:nth-child(4) { --i: 4; }
+.slide-in span:nth-child(5) { --i: 5; }
+
+@keyframes slideIn {
+  0% { transform: translateY(100%); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+.animate-in {
+  animation: slide-up 1s forwards;
+}
+
+@keyframes slide-up {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+/* Slide arrow buttons */
+.slide_arrow {
+  z-index: 11;
+  display: flex;
+  justify-content: space-between;
+  width: 95.4vw;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .main_bnn_title { font-size: 6vw; }
+  .main_bnn_txt { font-size: 3.5vw; }
+}
+
+@media (max-width: 480px) {
+  .main_bnn_title { font-size: 8vw; }
+  .main_bnn_txt { font-size: 4.5vw; }
+}
+
+
+
+
+.slide_arrow>button {display: flex; flex-direction: column; align-items: center; background: transparent; border: none; cursor: pointer;}
+.slide_arrow span {padding-top: 10px; font-size: 16px; font-family: 'Public Sans', sans-serif; color: #fff;}
+
+/* 슬라이드 번호 선택 */
+.slide_control {display: flex; position: absolute; bottom: 29%; left: 50%;transform: translateX(-50%);}
+.slide_select_btn {display: flex;}
+.slide_select_btn>li {display: flex; margin-right: 40px;}
+.slide_select_btn>li>a {font-size: 14px; font-family: 'Public Sans', sans-serif; font-weight: 600; color: #fff; letter-spacing: 1px;}
+.slide_control_btn {display: flex;}
+
+.slide_control_btn>li>a {display: block; width: 14px; height: 16px; text-indent: -9999px;}
+.slide_control_btn>li>a.btn_play {margin-right: 20px; background: url(../img/btn-play.png) no-repeat 0 0;}
+.slide_control_btn>li>a.btn_pause {background: url(../img/btn-stop.png) no-repeat 0 0;}
+
+.video-duration-bar {display: inline-block;height: 2px;
+width: 70px; background-color: #eee;vertical-align: middle; position: relative;overflow: hidden; margin-left: 10px; margin-top: 7px;border-radius: 50%; display: none;}
+.video-duration-bar-inner {height: 2px;width: 70px;background-color: #2c21213b;position: absolute;left: 0;animation: moveBar 10s linear infinite;}
+.video-duration-bar.on{display: block;}
+@keyframes moveBar {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+

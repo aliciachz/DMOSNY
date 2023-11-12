@@ -1,0 +1,193 @@
+
+.content .box_wrap {
+  margin: 0 auto;
+  position: relative;
+}
+
+.our_school .lists video {
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover;
+}
+
+.our_school {
+  z-index: 10;
+}
+
+.our_school h2 {
+  font-size: 2.5vw;
+  font-weight: bold;
+  text-align: center;
+  color: #145699;
+  padding: 5vw 0;
+}
+
+.animated-title span {
+  display: inline-block;
+  margin-right: 2px;
+  transform: translateY(100%);
+  opacity: 0;
+}
+
+
+@keyframes slideIn {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
+.our_school .lists .list_area > div {
+  float: left;
+  width: 50%;
+  height: 35vh;
+}
+
+.our_school .lists .txt_area dt {
+  font-size: 2.3vw;
+  font-weight: 600;
+  padding-bottom: 1.5vw;
+  color: #145699;
+}
+
+.our_school .lists .txt_area dd {
+  font-size: 1.5em;
+  color: #666;
+  line-height: 1.55;
+}
+
+.our_school .lists .txt_area .more-btn {
+  z-index: 20; 
+  color: #145699;
+  box-sizing: border-box;
+  transition: background-color 0.5s, color 0.5s; 
+  position: absolute;
+  right: 10px; 
+  bottom: 20px;
+}
+
+.our_school .lists .txt_area {
+  position: relative; 
+}
+
+.our_school .lists li:hover .txt_area .more-btn {
+  background: #145699;
+  color: #fff;
+  z-index: 20; 
+}
+
+
+/* Media Queries for different screen sizes */
+@media (max-width: 768px) {
+  .our_school h2 {
+    font-size: 5vw;
+  }
+
+  .our_school .lists .list_area > div {
+    width: 100%; 
+  }
+
+  .our_school .lists .txt_area dt {
+    font-size: 4vw;
+  }
+
+  .our_school .lists .txt_area .more-btn {
+    line-height: 5vw;
+    margin: 4vw;
+  }
+}
+
+.our_school .lists li:nth-child(1) .txt_area dt { background-image: url(../img/ico_site01.gif); background-repeat: no-repeat; background-size: contain; background-position: right;}
+
+
+.our_school .lists li:nth-child(2) .txt_area dt { background-image: url(../img/ico_site02.gif);  background-repeat: no-repeat; background-size: contain; background-position: right;}
+
+.our_school .lists li:nth-child(3) .txt_area dt {background-image: url(../img/ico_site03.gif);  background-repeat: no-repeat; background-size: contain;background-position: right; }
+
+.our_school .lists li:nth-child(4) .txt_area dt {background-image: url(../img/ico_site04.gif);  background-repeat: no-repeat; background-size: contain; background-position: right;}
+
+.our_school .lists li:nth-child(5) .txt_area dt {background-image: url(../img/ico_site05.gif);  background-repeat: no-repeat; background-size: contain; background-position: right;}
+
+.our_school .lists .txt_area dd { font-size: 18px; color: #666; line-height: 1.55;}
+
+.our_school .lists .txt_area .btn.white {border: none; transition: all .5s;}
+
+.our_school .lists .txt_area .more-btn { line-height: 43px; color: #145699; box-sizing: border-box; margin: 30px; }
+
+.our_school .lists li:hover .txt_area .more-btn{ background: #145699;color: #fff; padding: 20px; }
+
+.our_school .lists .txt_area .btn.white:after {width: 15px; height: 11px; margin-left: 10px; margin-top: -2px;background-image: url(../img/ico_prd_arr.png);}
+
+.our_school .lists .txt_area>dl{padding: 30px;}
+
+.right .img_area{float: right !important;}
+.right .txt_area{float: left !important;}
+
+.our_school .lists li:hover .img_area {box-shadow: 0 0 50px 10px rgba(0, 0, 0, 0.295); filter: brightness(110%);}
+
+.our_school .lists video{width: 100%; height: 100%;}
+
+.img_area{background-color: #000;}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+.slide-in-left {
+  animation: slideInFromLeft 1s ease-out;
+}
+
+.slide-in-right {
+  animation: slideInFromRight 1s ease-out;
+}
+
+
+
+.our_school .lists video {
+  transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+}
+
+.our_school .lists li:hover video {
+  transform: scale(1.05);
+  filter: brightness(120%);
+}
+
+
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+  .our_school .lists .txt_area {
+    position: relative; 
+  }
+
+  .our_school .lists .txt_area dl {
+    filter: blur(0px); 
+    transition: filter 0.3s ease; 
+  }
+  
+  .our_school .lists li:hover dl {
+    filter: blur(5px); 
+  }
+}
+
+
+
